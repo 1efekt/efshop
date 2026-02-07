@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>efshop - Цифровые товары</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка -->
+        <header class="header">
+            <div class="logo">🛍️ efshop</div>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </header>
+
+        <!-- Приветствие -->
+        <div class="welcome">
+            <h1>Привет, <span id="user-name">друг</span>! 👋</h1>
+            <p>Выбери цифровой товар для покупки</p>
+        </div>
+
+        <!-- Категории -->
+        <div class="categories">
+            <button class="category-btn active" onclick="showCategory('all')">Все</button>
+            <button class="category-btn" onclick="showCategory('spotify')">Spotify</button>
+            <button class="category-btn" onclick="showCategory('steam')">Steam</button>
+            <button class="category-btn" onclick="showCategory('discord')">Discord</button>
+        </div>
+
+        <!-- Товары -->
+        <div class="products" id="products-container">
+            <!-- Товары будут загружены через JavaScript -->
+        </div>
+
+        <!-- Корзина -->
+        <div class="cart" id="cart">
+            <div class="cart-header">
+                <h2>🛒 Корзина</h2>
+                <button class="close-cart" onclick="toggleCart()">×</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <p class="empty-cart">Корзина пуста</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Итого:</strong> <span id="total-price">0</span> ₽
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
